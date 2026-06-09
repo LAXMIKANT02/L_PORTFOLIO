@@ -1,8 +1,35 @@
+import CursorGlow from "./components/effects/CursorGlow";
+import AuroraBackground from "./components/effects/AuroraBackground";
+import Navbar from "./components/layout/Navbar";
+
+import Hero from "./sections/Hero/Hero";
+import About from "./sections/About/About";
+import TechnicalCore from "./sections/TechnicalCore/TechnicalCore";
+import Education from "./sections/Education/Education";
+import Projects from "./sections/Projects/Projects";
+import Achievements from "./sections/Achievements/Achievements";
+import Contact from "./sections/Contact/Contact";
+import Footer from "./components/footer/Footer";
+
 function App() {
   return (
-    <main className="min-h-screen bg-black flex items-center justify-center">
-      <h1 className="text-6xl font-bold text-cyan-400">L_PORTFOLIO</h1>
-    </main>
+    <>
+      <CursorGlow />
+      <AuroraBackground />
+
+      <Navbar />
+
+      <main className="relative z-10">
+        <Hero />
+        <About />
+        <TechnicalCore />
+        <Education />
+        <Projects />
+        <Achievements />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 }
 

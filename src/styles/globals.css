@@ -4,12 +4,17 @@ html {
 
 body {
   margin: 0;
-  background: #070b14;
-  color: white;
+  background: #0e0e0e;
+  color: #e5e2e1;
+  font-family: "Geist", sans-serif;
   overflow-x: hidden;
-  font-family: Inter, system-ui, sans-serif;
+  perspective: 1500px;
 }
 
 * {
   box-sizing: border-box;
+}
+
+#stack {
+  scroll-margin-top: 0px;
 }

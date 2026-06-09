@@ -1,16 +1,15 @@
 :root {
-  --bg-primary: #070b14;
-  --bg-secondary: #0d1320;
+  --background: #0e0e0e;
+  --surface: #131313;
 
-  --glass-bg: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.12);
+  --primary: #c0c1ff;
 
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
+  --aurora-indigo: #312e81;
+  --aurora-violet: #4c1d95;
 
-  --aurora-blue: #38bdf8;
-  --aurora-purple: #8b5cf6;
-  --aurora-pink: #ec4899;
+  --text: #e5e2e1;
+  --text-muted: #c7c4d7;
 
-  --radius-lg: 24px;
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
