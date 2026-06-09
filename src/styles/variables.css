@@ -1,0 +1,16 @@
+:root {
+  --bg-primary: #070b14;
+  --bg-secondary: #0d1320;
+
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+
+  --aurora-blue: #38bdf8;
+  --aurora-purple: #8b5cf6;
+  --aurora-pink: #ec4899;
+
+  --radius-lg: 24px;
+}
