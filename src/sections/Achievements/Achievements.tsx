@@ -115,21 +115,17 @@ function Achievements() {
   return (
     <section
       id="achievements"
-      className="py-24 px-6 relative overflow-hidden isolate"
+      className="py-12 px-6 relative overflow-hidden isolate"
     >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
 
-        <div className="text-center mb-20">
-          <span className="uppercase tracking-[0.25em] text-xs text-[#c0c1ff]">
-            Recognition
-          </span>
-
+        <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold mt-4">
             Recognitions & <span className="text-[#c0c1ff]">Artifacts</span>
           </h2>
 
-          <p className="text-[#c7c4d7] mt-4 max-w-2xl mx-auto">
+          <p className="text-[#c7c4d7] mt-4 max-w-4xl mx-auto">
             Internships, certifications, publications and milestones throughout
             my learning and professional journey.
           </p>
@@ -137,7 +133,7 @@ function Achievements() {
 
         {/* Stats */}
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-12">
           {[
             { value: "3+", label: "Internships" },
             { value: "6+", label: "Certificates" },
@@ -185,11 +181,11 @@ function Achievements() {
           <CertificateCard
             src={onestop}
             label="Internship"
-            title="1Stop.ai Internship"
+            title="1Stop.ai"
             onClick={() =>
               setSelectedCertificate({
                 src: onestop,
-                title: "1Stop.ai Internship",
+                title: "Full Stack Internship",
               })
             }
             className="
@@ -264,12 +260,12 @@ function Achievements() {
 
           <CertificateCard
             src={skillcraft}
-            label="Certification"
+            label="Internship"
             title="SkillCraft Certificate"
             onClick={() =>
               setSelectedCertificate({
                 src: skillcraft,
-                title: "SkillCraft Certificate",
+                title: "SkillCraft Technologies",
               })
             }
             className="
@@ -284,12 +280,12 @@ function Achievements() {
 
           <CertificateCard
             src={BPH}
-            label="paper"
-            title=" Internship Certificate"
+            label="Internship"
+            title="BPH Technologies LLM"
             onClick={() =>
               setSelectedCertificate({
                 src: BPH,
-                title: " Internship Certificate",
+                title: " MERN Stack Internship",
               })
             }
             className="

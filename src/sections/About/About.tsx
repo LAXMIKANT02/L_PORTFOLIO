@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  FiUser,
-  FiMonitor,
-  FiServer,
-  FiDatabase,
-  FiLayers,
-} from "react-icons/fi";
+import { FiMonitor, FiServer, FiDatabase, FiLayers } from "react-icons/fi";
 
 import GlassCard from "../../components/ui/GlassCard";
 
@@ -34,7 +28,7 @@ const stats = [
     label: "Projects",
   },
   {
-    value: "3",
+    value: "4",
     label: "Internships",
   },
   {
@@ -42,7 +36,7 @@ const stats = [
     label: "Stack",
   },
   {
-    value: "2022+",
+    value: "2023+",
     label: "Journey",
   },
 ];
@@ -65,14 +59,6 @@ function About() {
           }}
           className="mb-12"
         >
-          <div className="flex items-center gap-3 mb-4">
-            <FiUser className="text-[#c0c1ff]" />
-
-            <span className="uppercase tracking-[0.25em] text-xs text-[#c0c1ff]">
-              About Me
-            </span>
-          </div>
-
           <h2 className="text-4xl md:text-5xl font-bold leading-tight">
             Turning Ideas Into
             <span className="text-[#c0c1ff]"> Full Stack Solutions</span>
@@ -99,8 +85,8 @@ function About() {
               </p>
 
               <p className="text-[#c7c4d7] leading-relaxed">
-                Through internships, hackathons, and projects such as ShopNest
-                and AegisAI-X, I have gained hands-on experience building
+                Through internships, hackathons, and projects such as ShopNest,
+                MoodFit and SERL, I have gained hands-on experience building
                 production-ready applications using modern web technologies.
               </p>
 

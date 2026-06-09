@@ -52,8 +52,8 @@ function ProjectCard({
           alt={title}
           className="
             w-full
-            h-[240px]
-            object-cover
+            h-[450px]
+            object-fit
           "
         />
 
@@ -115,7 +115,7 @@ function ProjectCard({
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-2 mt-4">
+        <div className="flex flex-wrap gap-2 mt-5">
           {tech.map((item) => (
             <span
               key={item}
@@ -141,14 +141,14 @@ function ProjectCard({
               target="_blank"
               rel="noreferrer"
               className="
-        flex items-center gap-2
-        px-4 py-2
-        rounded-xl
-        border border-white/10
-        hover:border-[#c0c1ff]/20
-        hover:bg-white/[0.03]
-        transition-all
-      "
+                    flex items-center gap-2
+                    px-4 py-2
+                    rounded-xl
+                    border border-white/10
+                    hover:border-[#c0c1ff]/20
+                    hover:bg-white/[0.03]
+                    transition-all
+                "
             >
               <FiGithub />
               GitHub
@@ -160,15 +160,15 @@ function ProjectCard({
             target="_blank"
             rel="noreferrer"
             className="
-      flex items-center gap-2
-      px-4 py-2
-      rounded-xl
-      bg-[#c0c1ff]
-      text-black
-      font-medium
-      hover:scale-[1.03]
-      transition-all
-    "
+                flex items-center gap-2
+                px-4 py-2
+                rounded-xl
+                bg-[#c0c1ff]
+                text-black
+                font-medium
+                hover:scale-[1.03]
+                transition-all
+                "
           >
             <FiExternalLink />
             Showcase

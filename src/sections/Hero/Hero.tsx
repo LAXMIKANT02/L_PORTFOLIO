@@ -17,7 +17,7 @@ function Hero() {
         justify-center
         pt-24
         px-6
-        pb-16
+        pb-15
         max-w-[1280px]
         mx-auto
         relative
@@ -93,7 +93,7 @@ function Hero() {
           <div className="flex gap-4 mt-10">
             <button
               className="
-                px-7
+                px-8
                 py-3.5
                 rounded-2xl
                 font-medium
@@ -107,7 +107,7 @@ function Hero() {
                 color: "#1000a9",
               }}
             >
-              View My Work
+              <a href="#projects">View My Works</a>
             </button>
 
             <button
@@ -123,7 +123,7 @@ function Hero() {
                 duration-300
               "
             >
-              Connect
+              <a href="#connect">Contact</a>
             </button>
           </div>
         </motion.div>

@@ -1,3 +1,4 @@
+import resume from "../../assets/L_Resume.pdf";
 function Navbar() {
   return (
     <header
@@ -11,15 +12,15 @@ function Navbar() {
       border-b
     "
       style={{
-        background: "rgba(14,14,14,0.2)",
+        background: "rgba(60, 55, 55, 0.2)",
         borderColor: "rgba(255,255,255,0.08)",
       }}
     >
       <nav
         className="
-        max-w-[1200px]
+        max-w-[1400px]
         mx-auto
-        px-6
+        px-2
         h-16
         flex
         items-center
@@ -34,13 +35,14 @@ function Navbar() {
           text-xl
           "
         >
-          LAXMIKANT.DEV
+          LAXMIKANT S
         </div>
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#projects">Projects</a>
-          <a href="#education">Journey</a>
+          <a href="#about">About</a>
           <a href="#stack">Stack</a>
+          <a href="#education">Journey</a>
+          <a href="#projects">Projects</a>
           <a href="#connect">Contact</a>
 
           <button
@@ -55,7 +57,14 @@ function Navbar() {
               color: "#1000a9",
             }}
           >
-            Resume
+            <a
+              href={resume}
+              target="_blank"
+              rel="noreferrer"
+              /*download="Resume_Laxmikant_S"*/
+            >
+              Resume
+            </a>
           </button>
         </div>
       </nav>

@@ -16,14 +16,9 @@ function Projects() {
             y: 0,
           }}
           viewport={{ once: true }}
-          className="mb-14"
+          className="mb-10"
         >
-          <span className="uppercase tracking-[0.25em] text-xs text-[#c0c1ff]">
-            Featured Work
-          </span>
-
           <h2 className="text-4xl md:text-6xl font-bold mt-4">
-            Selected
             <span className="text-[#c0c1ff]"> Projects</span>
           </h2>
         </motion.div>
