@@ -26,7 +26,7 @@ function Projects() {
         {/* FEATURED */}
 
         <div className="mb-10">
-          <ProjectCard {...featuredProject} github="" />
+          <ProjectCard {...featuredProject} />
         </div>
 
         {/* OTHER PROJECTS */}

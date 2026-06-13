@@ -23,7 +23,16 @@ function EducationCard({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
-      className="flex items-center gap-6"
+      className="
+        flex
+        flex-col
+        md:flex-row
+        items-center
+        md:items-start
+        gap-6
+        text-center
+        md:text-left
+      "
     >
       {/* Logo */}
 
@@ -50,8 +59,12 @@ function EducationCard({
         <div
           className="
             relative
-            w-[130px]
-            h-[130px]
+            w-[100px]
+            h-[100px]
+            sm:w-[120px]
+            sm:h-[120px]
+            md:w-[130px]
+            md:h-[130px]
             rounded-full
             overflow-hidden
             border-2
@@ -106,7 +119,7 @@ function EducationCard({
 
         <p className="mt-2 text-[#c0c1ff] font-medium">{institution}</p>
 
-        <p className="mt-4 text-[#9ca3af] max-w-xl leading-relaxed">
+        <p className="mt-4 text-[#9ca3af] max-w-xl mx-auto md:mx-0 leading-relaxed">
           {description}
         </p>
       </div>

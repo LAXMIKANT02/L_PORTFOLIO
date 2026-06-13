@@ -31,7 +31,8 @@ function Contact() {
             border-white/10
             bg-white/[0.03]
             backdrop-blur-xl
-            p-8
+            p-6
+            sm:p-8
             md:p-14
           "
         >
@@ -49,13 +50,16 @@ function Contact() {
 
           {/* CTA Buttons */}
 
-          <div className="flex flex-wrap justify-center gap-5 mt-10">
+          <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10">
             <a
               href="mailto:laxmikantdadagi@gmail.com"
               className="
+                 w-full
+                sm:w-auto
                 inline-flex
                 items-center
-                gap-5
+                justify-center
+                gap-3
                 px-8
                 py-4
                 rounded-xl
@@ -75,11 +79,14 @@ function Contact() {
               href={resume}
               target="_blank"
               rel="noreferrer"
-              download="Resume_Laxmikant_S"
+              download="Laxmikant_S_Resume.pdf"
               className="
+                 w-full
+                sm:w-auto
                 inline-flex
                 items-center
-                gap-5
+                justify-center
+                gap-3
                 px-8
                 py-4
                 rounded-xl
@@ -96,14 +103,29 @@ function Contact() {
 
           {/* Social Icons */}
 
-          <div className="flex justify-center gap-5 mt-10">
+          <div
+            className="
+              grid
+              grid-cols-2
+              gap-4
+              mt-10
+              max-w-[140px]
+              mx-auto
+              sm:flex
+              sm:justify-center
+              sm:gap-5
+              sm:max-w-none
+            "
+          >
             <a
               href="https://github.com/LAXMIKANT02"
               target="_blank"
               rel="noreferrer"
               className="
-                w-15
-                h-15
+                w-12
+                h-12
+                sm:w-14
+                sm:h-14
                 rounded-xl
                 border
                 border-white/10
@@ -123,10 +145,10 @@ function Contact() {
               target="_blank"
               rel="noreferrer"
               className="
-                w-15
-                h-15
-                rounded-xl
+                w-12
                 h-12
+                sm:w-14
+                sm:h-14
                 rounded-xl
                 border
                 border-white/10
@@ -146,8 +168,10 @@ function Contact() {
               target="_blank"
               rel="noreferrer"
               className="
-                w-15
-                h-15
+                w-12
+                h-12
+                sm:w-14
+                sm:h-14
                 rounded-xl
                 border
                 border-white/10
@@ -165,8 +189,10 @@ function Contact() {
             <a
               href="mailto:laxmikantdadagi@gmail.com"
               className="
-                w-15
-                h-15
+                w-12
+                h-12
+                sm:w-14
+                sm:h-14
                 rounded-xl
                 border
                 border-white/10
@@ -187,7 +213,10 @@ function Contact() {
           <div className="mt-10 pt-4 border-t border-white/10 text-center text-sm text-[#9a96b5]">
             Designed & Developed by Laxmikant S.
             <br />
-            Built with React, TypeScript, Tailwind CSS & Framer Motion.
+            Built with React, Tailwind CSS, and a passion for software
+            engineering.
+            <br /> I hope you enjoyed exploring it as much as I enjoyed creating
+            it!
           </div>
         </motion.div>
       </div>

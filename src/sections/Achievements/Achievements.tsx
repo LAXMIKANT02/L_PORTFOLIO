@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
-
+import { FiX } from "react-icons/fi";
 import cognifyz from "../../assets/certificates/cognifyz.png";
 import skillcraft from "../../assets/certificates/skillcraft.png";
 import onestop from "../../assets/certificates/1stop.png";
@@ -9,334 +9,209 @@ import java from "../../assets/certificates/java.png";
 import BPH from "../../assets/certificates/BPH.png";
 import gluconet from "../../assets/certificates/gluconet.png";
 
-type CertificateProps = {
-  src: string;
-  title: string;
-  label: string;
-  className: string;
-  onClick: () => void;
-};
+const certificates = [
+  {
+    src: java,
+    title: "Programming in Java",
+    type: "Course",
+  },
+  {
+    src: paper1,
+    title: "Research Publication",
+    type: "Publication",
+  },
+  {
+    src: gluconet,
+    title: "GlucoNet Research Paper",
+    type: "Publication",
+  },
+  {
+    src: cognifyz,
+    title: "Cognifyz Technologies",
+    type: "Internship",
+  },
+  {
+    src: onestop,
+    title: "Full Stack Internship",
+    type: "Internship",
+  },
+  {
+    src: skillcraft,
+    title: "SkillCraft Technologies",
+    type: "Internship",
+  },
+  {
+    src: BPH,
+    title: "MERN Stack Internship",
+    type: "Internship",
+  },
+];
 
-function CertificateCard({
-  src,
-  title,
-  label,
-  className,
-  onClick,
-}: CertificateProps) {
-  return (
-    <motion.div
-      onClick={onClick}
-      whileHover={{
-        y: -10,
-        scale: 1.04,
-        rotate: 0,
-        zIndex: 50,
-      }}
-      transition={{
-        duration: 0.3,
-      }}
-      className={`${className} cursor-pointer relative`}
-    >
-      <div
-        className="
-          absolute
-          top-3
-          left-3
-          z-10
-          px-3
-          py-1
-          rounded-full
-          bg-black/70
-          backdrop-blur-xl
-          text-[10px]
-          uppercase
-          tracking-wider
-          text-[#c0c1ff]
-        "
-      >
-        {label}
-      </div>
-
-      <div
-        className="
-          absolute
-          bottom-3
-          left-3
-          right-3
-          z-20
-          px-3
-          py-2
-          rounded-xl
-          bg-black/70
-          backdrop-blur-xl
-        "
-      >
-        <p className="text-xs text-white font-medium">{title}</p>
-      </div>
-
-      <img
-        src={src}
-        alt={title}
-        className="
-          w-full
-          h-full
-          object-cover
-          rounded-2xl
-          border
-          border-white/10
-          shadow-[0_25px_60px_rgba(0,0,0,0.45)]
-        "
-      />
-    </motion.div>
-  );
-}
-
-function Achievements() {
-  const [selectedCertificate, setSelectedCertificate] = useState<{
+export default function Achievements() {
+  const [selected, setSelected] = useState<{
     src: string;
     title: string;
   } | null>(null);
 
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setSelectedCertificate(null);
-      }
-    };
-
-    window.addEventListener("keydown", handleEsc);
-
-    return () => {
-      window.removeEventListener("keydown", handleEsc);
-    };
-  }, []);
+  const [shuffled] = useState(() =>
+    [...certificates].sort(() => Math.random() - 0.5),
+  );
 
   return (
     <section
       id="achievements"
-      className="py-12 px-6 relative overflow-hidden isolate"
+      className="relative py-20 px-4 md:px-6 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
-        {/* Heading */}
+      {/* BLURRED CONTENT ONLY */}
+      <div
+        className={`max-w-7xl mx-auto transition-all duration-300 ${
+          selected ? "blur-md scale-[0.98]" : ""
+        }`}
+      >
+        {/* HEADING */}
 
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold mt-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold">
             Recognitions & <span className="text-[#c0c1ff]">Artifacts</span>
           </h2>
 
-          <p className="text-[#c7c4d7] mt-4 max-w-4xl mx-auto">
-            Internships, certifications, publications and milestones throughout
-            my learning and professional journey.
+          <p className="text-[#c7c4d7] mt-4 max-w-3xl mx-auto">
+            Internships, certifications, publications and achievements
+            throughout my learning journey.
           </p>
         </div>
 
-        {/* Stats */}
+        {/* STATS */}
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
           {[
             { value: "3+", label: "Internships" },
             { value: "6+", label: "Certificates" },
-            { value: "2", label: "Publication" },
+            { value: "2", label: "Publications" },
             { value: "10+", label: "Projects" },
-          ].map((stat) => (
+          ].map((item) => (
             <motion.div
-              key={stat.label}
-              whileHover={{ y: -5 }}
+              key={item.label}
+              whileHover={{ y: -8 }}
               className="
-              rounded-2xl
-              border
-              border-white/10
-              bg-white/[0.03]
-              backdrop-blur-xl
-              p-6
-              text-center
-            "
+                rounded-2xl
+                border
+                border-white/10
+                bg-white/[0.03]
+                backdrop-blur-xl
+                p-6
+                text-center
+              "
             >
-              <h3 className="text-3xl font-bold text-[#c0c1ff]">
-                {stat.value}
+              <h3 className="text-3xl md:text-4xl font-bold text-[#c0c1ff]">
+                {item.value}
               </h3>
 
-              <p className="mt-2 text-sm text-[#c7c4d7] uppercase tracking-wider">
-                {stat.label}
+              <p className="mt-2 text-sm uppercase tracking-wider text-[#c7c4d7]">
+                {item.label}
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Certificate Wall */}
+        {/* CERTIFICATE ROW */}
 
-        <div
-          className={`
-            relative
-            mx-auto
-            h-[900px]
-            max-w-8xl
-            overflow-hidden
-            transition-all
-            duration-300
-            ${selectedCertificate ? "blur-md scale-[0.98] pointer-events-none" : ""}
-          `}
-        >
-          <CertificateCard
-            src={onestop}
-            label="Internship"
-            title="1Stop.ai"
-            onClick={() =>
-              setSelectedCertificate({
-                src: onestop,
-                title: "Full Stack Internship",
-              })
-            }
-            className="
-                absolute
-                left-[8%]
-                top-[20px]
-                w-[340px]
-                rotate-[-8deg]
-                z-10
-              "
-          />
+        <div className="overflow-hidden">
+          <div className="marquee flex gap-6">
+            {[...shuffled, ...shuffled].map((certificate, index) => (
+              <motion.div
+                key={index}
+                whileHover={{
+                  y: -8,
+                  scale: 1.03,
+                }}
+                onClick={() =>
+                  setSelected({
+                    src: certificate.src,
+                    title: certificate.title,
+                  })
+                }
+                className="
+                  min-w-[220px]
+                  md:min-w-[280px]
+                  cursor-pointer
+                  rounded-2xl
+                  overflow-hidden
+                  border
+                  border-white/10
+                  bg-white/[0.03]
+                  backdrop-blur-xl
+                "
+              >
+                <div className="relative">
+                  <img
+                    src={certificate.src}
+                    alt={certificate.title}
+                    className="
+                      w-full
+                      h-[160px]
+                      md:h-[190px]
+                      object-cover
+                    "
+                  />
 
-          <CertificateCard
-            src={java}
-            label="Course"
-            title="Programming in Java"
-            onClick={() =>
-              setSelectedCertificate({
-                src: java,
-                title: "Programming in Java",
-              })
-            }
-            className="
-              absolute
-              left-[37%]
-              top-[50px]
-              w-[360px]
-              rotate-[2deg]
-              z-50
-            "
-          />
+                  <div
+                    className="
+                      absolute
+                      top-3
+                      left-3
+                      px-3
+                      py-1
+                      rounded-full
+                      text-xs
+                      bg-black/70
+                      text-[#c0c1ff]
+                    "
+                  >
+                    {certificate.type}
+                  </div>
 
-          <CertificateCard
-            src={paper1}
-            label="Publication"
-            title="Research Publication"
-            onClick={() =>
-              setSelectedCertificate({
-                src: paper1,
-                title: "Research Publication",
-              })
-            }
-            className="
-              absolute
-              left-[40%]
-              top-[-480px]
-              w-[340px]
-              rotate-[8deg]
-              z-10
-            "
-          />
-
-          <CertificateCard
-            src={cognifyz}
-            label="Internship"
-            title="Cognifyz Technologies"
-            onClick={() =>
-              setSelectedCertificate({
-                src: cognifyz,
-                title: "Cognifyz Technologies",
-              })
-            }
-            className="
-              absolute
-              right-[-70%]
-              top-[-650px]
-              w-[340px]
-              rotate-[5deg]
-              z-30
-            "
-          />
-
-          <CertificateCard
-            src={skillcraft}
-            label="Internship"
-            title="SkillCraft Certificate"
-            onClick={() =>
-              setSelectedCertificate({
-                src: skillcraft,
-                title: "SkillCraft Technologies",
-              })
-            }
-            className="
-              absolute
-              right-[-65%]
-              top-[-600px]
-              w-[340px]
-              rotate-[-8deg]
-              z-40
-            "
-          />
-
-          <CertificateCard
-            src={BPH}
-            label="Internship"
-            title="BPH Technologies LLM"
-            onClick={() =>
-              setSelectedCertificate({
-                src: BPH,
-                title: " MERN Stack Internship",
-              })
-            }
-            className="
-              absolute
-              left-[8%]
-              top-[-1100px]
-              w-[360px]
-              rotate-[-2deg]
-              z-20
-            "
-          />
-          <CertificateCard
-            src={gluconet}
-            label="paper"
-            title="GlucoNet Research Paper"
-            onClick={() =>
-              setSelectedCertificate({
-                src: gluconet,
-                title: "GlucoNet Research Paper",
-              })
-            }
-            className="
-              absolute
-              left-[35%]
-              top-[-1250px]
-              w-[340px]
-              rotate-[5deg]
-              z-21
-            "
-          />
+                  <div
+                    className="
+                      absolute
+                      bottom-0
+                      left-0
+                      right-0
+                      p-3
+                      bg-gradient-to-t
+                      from-black
+                      to-transparent
+                    "
+                  >
+                    <p className="text-sm text-white font-medium">
+                      {certificate.title}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* LIGHTBOX */}
+      {/* SHARP MODAL */}
 
       <AnimatePresence>
-        {selectedCertificate && (
+        {selected && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedCertificate(null)}
+            onClick={() => setSelected(null)}
             className="
               absolute
               inset-0
-              z-50
-              bg-black/50
+              z-[999]
+              bg-black/60
               flex
               items-center
               justify-center
-              p-6
+              p-4
             "
           >
             <motion.div
@@ -352,61 +227,24 @@ function Achievements() {
                 scale: 0.8,
                 opacity: 0,
               }}
-              transition={{
-                duration: 0.3,
-              }}
               onClick={(e) => e.stopPropagation()}
               className="relative"
             >
               <img
-                src={selectedCertificate.src}
-                alt={selectedCertificate.title}
+                src={selected.src}
+                alt={selected.title}
                 className="
-                block
-                max-w-[800px]
-                max-h-[80vh]
-                rounded-3xl
-                bg-white
-                border
-                border-white/10
-                shadow-[0_0_120px_rgba(192,193,255,0.35)]
-              "
+                  max-w-[90vw]
+                  max-h-[500px]
+                  object-contain
+                  rounded-3xl
+                  bg-white
+                  p-2
+                "
               />
 
-              <div
-                className="
-                absolute
-                bottom-4
-                left-4
-                right-4
-                rounded-xl
-                bg-black/70
-                backdrop-blur-xl
-                px-4
-                py-3
-              "
-              >
-                <p className="font-semibold text-white">
-                  {selectedCertificate.title}
-                </p>
-              </div>
-
-              <button
-                onClick={() => setSelectedCertificate(null)}
-                className="
-                absolute
-                -top-4
-                -right-4
-                w-10
-                h-10
-                rounded-full
-                bg-[#c0c1ff]
-                text-black
-                font-bold
-                shadow-lg
-              "
-              >
-                ×
+              <button aria-label="Close certificate preview">
+                <FiX />
               </button>
             </motion.div>
           </motion.div>
@@ -415,5 +253,3 @@ function Achievements() {
     </section>
   );
 }
-
-export default Achievements;

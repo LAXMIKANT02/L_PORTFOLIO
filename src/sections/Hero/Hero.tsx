@@ -41,7 +41,7 @@ function Hero() {
         {/* LEFT CONTENT */}
 
         <motion.div
-          className="hero-content-parallax"
+          className="hero-content-parallax text-center lg:text-left"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -66,8 +66,9 @@ function Hero() {
               font-bold
               leading-[0.88]
               tracking-tight
-              text-[52px]
-              md:text-[68px]
+              text-[38px]
+              sm:text-[48px]
+              md:text-[60px]
               xl:text-[78px]
             "
           >
@@ -90,7 +91,17 @@ function Hero() {
             design performance.
           </p>
 
-          <div className="flex gap-4 mt-10">
+          <div
+            className="
+              flex
+              flex-col
+              sm:flex-row
+              gap-4
+              mt-10
+              justify-center
+              lg:justify-start
+            "
+          >
             <button
               className="
                 px-8
@@ -152,8 +163,12 @@ function Hero() {
           <div
             className="
               relative
-              w-[420px]
-              h-[420px]
+              w-[280px]
+              h-[280px]
+              sm:w-[340px]
+              sm:h-[340px]
+              md:w-[420px]
+              md:h-[420px]
               lg:w-[520px]
               lg:h-[520px]
             "

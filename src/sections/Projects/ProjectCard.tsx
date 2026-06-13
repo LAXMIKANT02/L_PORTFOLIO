@@ -52,8 +52,11 @@ function ProjectCard({
           alt={title}
           className="
             w-full
-            h-[450px]
-            object-fit
+            h-[220px]
+            sm:h-[280px]
+            md:h-[350px]
+            lg:h-[450px]
+            object-cover
           "
         />
 
@@ -134,7 +137,7 @@ function ProjectCard({
           ))}
         </div>
 
-        <div className="flex gap-3 mt-6">
+        <div className="flex flex-col sm:flex-row gap-3 mt-6">
           {github && (
             <a
               href={github}

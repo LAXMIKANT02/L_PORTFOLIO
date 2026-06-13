@@ -79,7 +79,7 @@ function About() {
 
               <p className="text-[#c7c4d7] leading-relaxed mb-5">
                 I enjoy transforming ideas into complete digital products by
-                working across the entire development lifecycle—from creating
+                working across the entire development lifecycle, from creating
                 responsive user interfaces to designing backend systems, APIs,
                 and databases.
               </p>
