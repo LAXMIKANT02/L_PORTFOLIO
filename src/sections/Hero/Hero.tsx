@@ -1,8 +1,11 @@
 import heroImage from "../../assets/hero.png";
 import MorphBlob from "../../components/effects/MorphBlob";
-import HeroCanvas from "../../components/effects/HeroCanvas";
+import { lazy, Suspense } from "react";
+
 import { useMouseParallax } from "../../hooks/useMouseParallax";
 import { motion } from "framer-motion";
+
+const HeroCanvas = lazy(() => import("../../components/effects/HeroCanvas"));
 
 function Hero() {
   useMouseParallax();
@@ -24,7 +27,9 @@ function Hero() {
         overflow-hidden
       "
     >
-      <HeroCanvas />
+      <Suspense fallback={null}>
+        <HeroCanvas />
+      </Suspense>
 
       <div
         className="

@@ -1,16 +1,17 @@
 import CursorGlow from "./components/effects/CursorGlow";
 import AuroraBackground from "./components/effects/AuroraBackground";
 import Navbar from "./components/layout/Navbar";
+import { lazy, Suspense } from "react";
 
 import Hero from "./sections/Hero/Hero";
 import About from "./sections/About/About";
 import TechnicalCore from "./sections/TechnicalCore/TechnicalCore";
 import Education from "./sections/Education/Education";
 import Projects from "./sections/Projects/Projects";
-import Achievements from "./sections/Achievements/Achievements";
 import Contact from "./sections/Contact/Contact";
 import Footer from "./components/footer/Footer";
 
+const Achievements = lazy(() => import("./sections/Achievements/Achievements"));
 function App() {
   return (
     <>
@@ -25,7 +26,9 @@ function App() {
         <TechnicalCore />
         <Education />
         <Projects />
-        <Achievements />
+        <Suspense fallback={null}>
+          <Achievements />
+        </Suspense>
         <Contact />
         <Footer />
       </main>
