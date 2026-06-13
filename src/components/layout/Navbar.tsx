@@ -27,6 +27,7 @@ function Navbar() {
         justify-between
         "
       >
+        <a href="#hero">LS</a>
         <div
           className="
           text-white
@@ -63,7 +64,7 @@ function Navbar() {
               rel="noreferrer"
               /*download="Resume_Laxmikant_S"*/
             >
-              Resume
+              View Resume
             </a>
           </button>
         </div>
