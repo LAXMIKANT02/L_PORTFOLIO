@@ -77,14 +77,14 @@ function About() {
                 modern, scalable, and user-focused web applications.
               </p>
 
-              <p className="text-[#c7c4d7] leading-relaxed mb-5">
+              <p className="text-[#c7c4d7] leading-relaxed mb-5 text-lg">
                 I enjoy transforming ideas into complete digital products by
                 working across the entire development lifecycle, from creating
                 responsive user interfaces to designing backend systems, APIs,
                 and databases.
               </p>
 
-              <p className="text-[#c7c4d7] leading-relaxed">
+              <p className="text-[#c7c4d7] leading-relaxed text-lg">
                 Through internships, hackathons, and projects such as ShopNest,
                 MoodFit and SERL, I have gained hands-on experience building
                 production-ready applications using modern web technologies.
